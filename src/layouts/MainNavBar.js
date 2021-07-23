@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import Logo from '../images/logo.png'
 import Maps from '../images/sidearea-img.jpeg'
 import { Link } from 'react-router-dom'
 import { BiBasket } from 'react-icons/bi'
@@ -19,7 +18,7 @@ const MainNavBar = () => {
                     <div className='navigation-container'>
                         <div className='navigation-items'>
                             <div className='main-logo'>
-                                <img src={Logo}></img>
+                                <img src='images/logo.png'></img>
                             </div>
                         </div>
                        
@@ -77,7 +76,7 @@ const MainNavBar = () => {
                                     </div>
                                     <div className='sidenav-container'>
                                         <div className='logo'>
-                                            <img src={Logo}></img>
+                                        <img src='images/logo.png'></img>
                                             <h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aene an commodo ligula eget dolor. Aenean massa. Cum sociis the</h3>
                                         </div>
                                         <div className='sidenav-maps'>
