@@ -1,8 +1,6 @@
 import React from 'react'
 
 const HolidayComponent = ({ details }) => {
-    console.log(details)
-
     return (
         <>
             {details && details.map((items) => {

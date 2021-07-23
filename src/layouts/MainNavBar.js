@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { BiBasket } from 'react-icons/bi'
 import { FiSearch } from 'react-icons/fi'
 import { FaRegEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaTwitter, FaPinterest, FaFacebook, FaInstagram, FaRegUserCircle } from 'react-icons/fa'
+import Navbar from './NavBar'
 
 const MainNavBar = () => {
     const show = useRef(null)
@@ -21,8 +22,10 @@ const MainNavBar = () => {
                                 <img src={Logo}></img>
                             </div>
                         </div>
-                        <div className='navigation-items'>
-                            <ul>
+                       
+                         <div className='navigation-items'>
+                             <Navbar/>
+                            {/*<ul>
                                 <li>
                                     <Link to='/'>Home</Link>
                                     {/* <div className='sub-nav' ref={show}>
@@ -35,8 +38,7 @@ const MainNavBar = () => {
                                             <li>Home</li>
                                         </ul>
 
-                                    </div> */}
-                                </li>
+                                    </div> 
                                 <li>
                                     <Link to='/'>Pages</Link>
                                 </li>
@@ -56,8 +58,9 @@ const MainNavBar = () => {
                                     <Link to='/'>Elements</Link>
                                 </li>
                             </ul>
+                            */}
 
-                        </div>
+                        </div> 
                         <div className='navigation-items'>
                             <div className='nav-buttons'>
                                 <BiBasket className='navbar-icons' />

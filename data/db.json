@@ -17,9 +17,23 @@
         },
         {
             "title": "images/Bali.jpeg", "name": "Bali", "childImages": [
-                { "image": "images/Ubud.jpeg", "subname": "Ubud", "rating": "6.0 Good", "price": "$888" }, { "image": "images/Seminyak.jpeg", "subname": "images/Valencia.jpeg", "rating": "9.0 Superb", "price": "$966" }, { "image": "images/Denpasar.jpeg", "subname": "Denpasar", "rating": "6.7 Good", "price": "$999" }
+                { "image": "images/Ubud.jpeg", "subname": "Ubud", "rating": "6.0 Good", "price": "$888" }, { "image": "images/Seminyak.jpeg", "subname": "Seminyak", "rating": "9.0 Superb", "price": "$966" }, { "image": "images/Denpasar.jpeg", "subname": "Denpasar", "rating": "6.7 Good", "price": "$999" }
             ]
         }
+    ],
+    "visit":[
+        { "title": "images/Valencia.jpeg", "name": "Valencia"  },
+        { "title": "images/Seminyak.jpeg", "name": "Varadoro"  },
+        { "title": "images/vaticancity.jpeg", "name": "Italy" }
+    ],
+    "destinations": [
+        { "title": "images/cofru.jpeg", "name": "Corfu", "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", "price": "$966", "date": "1", "people": "13+", "place": "Europe" },
+        { "title": "images/vaticancity.jpeg", "name": "Vatican City", "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", "price": "$860", "date": "1", "people": "13+", "place": "Europe" },
+        { "title": "images/rome.jpeg", "name": "Rome", "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", "price": "$2300", "date": "1", "people": "13+", "place": "Europe" },
+        { "title": "images/milan.jpeg", "name": "Milan", "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", "price": "$1230", "date": "1", "people": "13", "place": "Europe" },
+        { "title": "images/winter-action.jpeg", "name": "WinterAction", "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", "price": "$960", "date": "1", "people": "13+", "place": "Skiing" },
+        { "title": "images/magicofitaly.jpeg", "name": "MagicItaly", "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", "price": "$1000", "date": "1", "people": "13+", "place": "Skiing" },
+        { "title": "images/snowsurfing.jpeg", "name": "SnowSurfing", "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", "price": "$720", "date": "1", "people": "13+", "place": "Skiing" }
     ]
 }
 

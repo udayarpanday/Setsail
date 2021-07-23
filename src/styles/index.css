@@ -154,6 +154,14 @@ p {
   color: white;
 }
 
+.nav-dropdown {
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  padding: 10px 45px;
+  width: 150px;
+}
+
 #top-nav {
   background-color: #1c1c1c;
 }
@@ -242,7 +250,6 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  overflow: hidden;
 }
 
 #main-nav .navigation-container .navigation-items .main-logo img {

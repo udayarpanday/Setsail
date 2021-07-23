@@ -158,7 +158,13 @@ p {
         color: white;
     }
 }
-
+.nav-dropdown{
+    background-color: white;
+    position: absolute;
+    top:50px;
+    padding: 10px 45px;
+    width: 150px;
+}
 
 #top-nav {
     background-color: #1c1c1c;
@@ -222,8 +228,6 @@ p {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        overflow: hidden;
-
         .navigation-items {
 
             .main-logo {

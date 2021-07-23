@@ -1,5 +1,6 @@
 import React from 'react'
 const PlacesComponent = ({ places }) => {
+
     return (
         <>
             <div className='places-container'>

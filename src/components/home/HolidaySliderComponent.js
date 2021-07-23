@@ -20,7 +20,7 @@ const HolidaySliderComponent = ({ destinations }) => {
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aene an commodo ligula eget dolor. Aenean massa. Cum sociis the</p>
                         </div>
                     <Slider {...settings} className='holiday-chose-slider'>
-                        {destinations.map((details) => {
+                        {destinations && destinations.map((details) => {
                             return (
                                 <div className='destinations-card'>
                                     <div className='destinations-items'>

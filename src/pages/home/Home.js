@@ -74,25 +74,21 @@ const Home = () => {
     //         ]
     //     },
     // ]
-    const destinations = [
-        { title: Corfu, name: "Corfu", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$966", date: '1', people: '13+', place: "Europe" },
-        { title: VaticanCity, name: "Vatican City", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$860", date: '1', people: '13+', place: "Europe" },
-        { title: Rome, name: "Rome", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$2300", date: '1', people: '13+', place: "Europe" },
-        { title: Milan, name: "Milan", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$1230", date: '1', people: '13+', place: "Europe" },
-        { title: WinterAction, name: "WinterAction", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$960", date: '1', people: '13+', place: "Skiing" },
-        { title: MagicItaly, name: "MagicItaly", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$1000", date: '1', people: '13+', place: "Skiing" },
-        { title: SnowSurfing, name: "SnowSurfing", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$720", date: '1', people: '13+', place: "Skiing" }
-    ]
+    // const destinations = [
+    //     { title: Corfu, name: "Corfu", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$966", date: '1', people: '13+', place: "Europe" },
+    //     { title: VaticanCity, name: "Vatican City", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$860", date: '1', people: '13+', place: "Europe" },
+    //     { title: Rome, name: "Rome", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$2300", date: '1', people: '13+', place: "Europe" },
+    //     { title: Milan, name: "Milan", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$1230", date: '1', people: '13+', place: "Europe" },
+    //     { title: WinterAction, name: "WinterAction", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$960", date: '1', people: '13+', place: "Skiing" },
+    //     { title: MagicItaly, name: "MagicItaly", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$1000", date: '1', people: '13+', place: "Skiing" },
+    //     { title: SnowSurfing, name: "SnowSurfing", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$720", date: '1', people: '13+', place: "Skiing" }
+    // ]
     // const places = [
     //     { title: Valencia, name: "Valencia", price: "$1966" },
     //     { title: Seminyak, name: "Varadoro", price: "$2300" },
     //     { title: VaticanCity, name: "Italy", price: "$2500" },
     // ]
-    const mustVisit = [
-        { title: Valencia, name: "Valencia"  },
-        { title: Seminyak, name: "Varadoro"  },
-        { title: VaticanCity, name: "Italy" },
-    ]
+    
     const reviews = [
         { title: Review1, name: "Tarragona", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", user: "John Doe" },
         { title: Review2, name: "Temple Tour", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", user: "Ema Copper" },
@@ -110,11 +106,15 @@ const Home = () => {
     ]
     const [place, setPlaces] = useState(null)
     const [details, setDetails] = useState(null)
+    const [mustVisit, setVisit] = useState(null)
+    const [destinations, setDestinations] = useState(null)
 
 
     useEffect(() => {
         getPlacesData();
         getDetails();
+        getVisit();
+        getDestination()
     }, [])
     ///
     const getPlacesData = () => {
@@ -130,6 +130,25 @@ const Home = () => {
         axios.get('http://localhost:8000/detail')
           .then(res => {
             setDetails(res.data)
+          })
+          .catch(err => {
+              console.log(err)
+          })
+      }
+      const getVisit = () => {
+        axios.get('http://localhost:8000/visit')
+          .then(res => {
+            setVisit(res.data)
+            console.log(res.data)
+          })
+          .catch(err => {
+              console.log(err)
+          })
+      }
+      const getDestination = () => {
+        axios.get('http://localhost:8000/destinations')
+          .then(res => {
+            setDestinations(res.data)
             console.log(res.data)
           })
           .catch(err => {
