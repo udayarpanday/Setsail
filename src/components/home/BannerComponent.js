@@ -13,7 +13,7 @@ const BannerComponent = () => {
     };
     return (
         <>
-             <section id='banner-slider'>
+             <section className='banner-slider'>
                 <Slider {...settings}>
                     <div className='slider-container'>
                         <div className='slider-image'>

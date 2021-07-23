@@ -14,7 +14,7 @@ const ReviewSliderComponent = ( props ) => {
     };
     return (
         <>
-            <div id='review-slider'>
+            <div className='review-slider'>
                 <div className='custom-container'>
                     <Slider {...settings}>
                         {

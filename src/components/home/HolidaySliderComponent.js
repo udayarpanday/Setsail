@@ -12,7 +12,7 @@ const HolidaySliderComponent = ({ destinations }) => {
     };
     return (
         <>
-            <div id='holiday-slider-wrapper'>
+            <div className='holiday-slider-wrapper'>
                 <div className='custom-container'>
                     <div className='section-title'>
                             <h3>Plan The</h3>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TopNavBar from '../../layouts/TopNavBar'
 import MainNavBar from '../../layouts/MainNavBar'
 
@@ -51,26 +51,29 @@ import HolidaySliderComponent from '../../components/home/HolidaySliderComponent
 import ReviewSliderComponent from '../../components/home/ReviewSliderComponent'
 import PlacesComponent from '../../components/home/PlacesComponent'
 import TravelReviews from '../../components/home/TravelReviews'
+import SubNavBar from '../../layouts/SubFooterBar'
+import Footer from '../../layouts/Footer'
+import axios from 'axios'
 
 
 const Home = () => {
-    const detail = [
-        {
-            title: Spain, name: "Spain", childImages: [
-                { image: Tarragona, subname: "Tarragona", rating: "5.0 Good", price: "$1740" }, { image: Madrid, subname: 'Madrid', rating: "7.0 Superb", price: "$1100" }, { image: Barcelona, subname: 'Barcelona', rating: "5.3 Good", price: "$840" }
-            ]
-        },
-        {
-            title: Taiwan, name: "Taiwan", childImages: [
-                { image: Tainan, subname: "Tainan", rating: "7.3 Superb", price: "$999" }, { image: Taipei, subname: 'Taipei', rating: "5.0 Good", price: "$2130" }, { image: Kaohsing, subname: 'Kaohsiung', rating: "8.0 Superb", price: "$963" }
-            ]
-        },
-        {
-            title: Bali, name: "Bali", childImages: [
-                { image: Ubdu, subname: "Ubud", rating: "6.0 Good", price: "$888" }, { image: Seminyak, subname: 'Seminyak', rating: "9.0 Superb", price: "$966" }, { image: Denpasar, subname: 'Denpasar', rating: "6.7 Good", price: "$999" }
-            ]
-        },
-    ]
+    // const detail = [
+    //     {
+    //         title: Spain, name: "Spain", childImages: [
+    //             { image: Tarragona, subname: "Tarragona", rating: "5.0 Good", price: "$1740" }, { image: Madrid, subname: 'Madrid', rating: "7.0 Superb", price: "$1100" }, { image: Barcelona, subname: 'Barcelona', rating: "5.3 Good", price: "$840" }
+    //         ]
+    //     },
+    //     {
+    //         title: Taiwan, name: "Taiwan", childImages: [
+    //             { image: Tainan, subname: "Tainan", rating: "7.3 Superb", price: "$999" }, { image: Taipei, subname: 'Taipei', rating: "5.0 Good", price: "$2130" }, { image: Kaohsing, subname: 'Kaohsiung', rating: "8.0 Superb", price: "$963" }
+    //         ]
+    //     },
+    //     {
+    //         title: Bali, name: "Bali", childImages: [
+    //             { image: Ubdu, subname: "Ubud", rating: "6.0 Good", price: "$888" }, { image: Seminyak, subname: 'Seminyak', rating: "9.0 Superb", price: "$966" }, { image: Denpasar, subname: 'Denpasar', rating: "6.7 Good", price: "$999" }
+    //         ]
+    //     },
+    // ]
     const destinations = [
         { title: Corfu, name: "Corfu", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$966", date: '1', people: '13+', place: "Europe" },
         { title: VaticanCity, name: "Vatican City", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$860", date: '1', people: '13+', place: "Europe" },
@@ -80,11 +83,11 @@ const Home = () => {
         { title: MagicItaly, name: "MagicItaly", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$1000", date: '1', people: '13+', place: "Skiing" },
         { title: SnowSurfing, name: "SnowSurfing", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing el.… ", price: "$720", date: '1', people: '13+', place: "Skiing" }
     ]
-    const places = [
-        { title: Valencia, name: "Valencia", price: "$1966" },
-        { title: Seminyak, name: "Varadoro", price: "$2300" },
-        { title: VaticanCity, name: "Italy", price: "$2500" },
-    ]
+    // const places = [
+    //     { title: Valencia, name: "Valencia", price: "$1966" },
+    //     { title: Seminyak, name: "Varadoro", price: "$2300" },
+    //     { title: VaticanCity, name: "Italy", price: "$2500" },
+    // ]
     const mustVisit = [
         { title: Valencia, name: "Valencia"  },
         { title: Seminyak, name: "Varadoro"  },
@@ -105,12 +108,40 @@ const Home = () => {
         { title: PostMark5, name: "Italy", },
         { title: PostMark6, name: "Venice", },
     ]
+    const [place, setPlaces] = useState(null)
+    const [details, setDetails] = useState(null)
+
+
+    useEffect(() => {
+        getPlacesData();
+        getDetails();
+    }, [])
+    ///
+    const getPlacesData = () => {
+        axios.get('http://localhost:8000/places')
+          .then(res => {
+            setPlaces(res.data)
+          })
+          .catch(err => {
+              console.log(err)
+          })
+      }
+    const getDetails = () => {
+        axios.get('http://localhost:8000/detail')
+          .then(res => {
+            setDetails(res.data)
+            console.log(res.data)
+          })
+          .catch(err => {
+              console.log(err)
+          })
+      }
     return (
-        <div>
+        <>
             <TopNavBar />
             <MainNavBar />
             <BannerComponent />
-            <section id='search-form'>
+            <section className='search-form'>
                 <div className='custom-container'>
                     <div className='search-input'>
                         <input></input>
@@ -125,7 +156,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section id='choose-holiday-wrapper'>
+            <section className='choose-holiday-wrapper'>
                 <div className='custom-container zero-padding'>
                     <div className='section-title'>
                         <h3>Choose Your</h3>
@@ -133,11 +164,11 @@ const Home = () => {
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aene an commodo ligula eget dolor. Aenean massa. Cum sociis the</p>
                     </div>
                     <div className='destination-container'>
-                        <HolidayComponent details={detail} />
+                        <HolidayComponent details={details} />
                     </div>
                 </div>
             </section>
-            <section id='paris-banner'>
+            <section className='paris-banner'>
                 <div className='custom-container'>
                     <div className='banner-image'>
                         <img src={Paris}></img>
@@ -147,18 +178,18 @@ const Home = () => {
             <VideoComponent />
             <HolidaySliderComponent destinations={destinations} />
             <ReviewSliderComponent  data={reviews} slide={1}/>
-            <section id='common-places-section'>
+            <section className='common-places-section'>
                 <div className='custom-container'>
                     <div className='section-title'>
                         <h3>The Unforgettable</h3>
                         <h1>Mediterranean</h1>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aene an commodo ligula eget dolor. Aenean massa. Cum sociis</p>
                     </div>
-                    <PlacesComponent places={places} />
+                   <PlacesComponent places={place} />
                 </div>
             </section>
             <TravelReviews reviews={reviews} />
-            <section id='home-blog-wrapper'>
+            <section className='home-blog-wrapper'>
                 <div className='custom-container'>
                     <div className='blog-container'>
                         <div className='blog-items'>
@@ -210,7 +241,7 @@ const Home = () => {
                 </div>
 
             </section>
-            <section id='common-places-section'>
+            <section className='common-places-section'>
                 <div className='custom-container'>
                     <div className='section-title'>
                         <h3>Choose Your</h3>
@@ -222,7 +253,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section id='slider-wrapper'>
+            <section className='slider-wrapper'>
                 <div className='custom-container'>
                     <div className='section-title'>
                         <h3>Get Ready</h3>
@@ -232,7 +263,9 @@ const Home = () => {
                 </div>
                 <ReviewSliderComponent data={postmark} slide={4} />
             </section>
-        </div>
+            <SubNavBar/>
+            <Footer/>
+        </>
     )
 }
 

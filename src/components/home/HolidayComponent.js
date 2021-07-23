@@ -1,10 +1,11 @@
 import React from 'react'
 
 const HolidayComponent = ({ details }) => {
+    console.log(details)
 
     return (
         <>
-            {details.map((items) => {
+            {details && details.map((items) => {
                 return (
                     <>
                         <div className='destination'>
@@ -14,7 +15,8 @@ const HolidayComponent = ({ details }) => {
                                         <img className='country-tile' src={items.title}></img>
                                     </div>
                                     <div className='country-name'>
-                                        <h1>{items.name}</h1>
+                                        <h4>{items.name}</h4>
+                                        <h4>{items.price}</h4>
                                     </div>
 
                                 </div>
@@ -22,7 +24,7 @@ const HolidayComponent = ({ details }) => {
                             {
                                 items.childImages.map((child) =>
                                     <div className='destination-items'>
-                                        <div className='destination-country'>
+                                    
                                             <div className='places-images'>
                                                 <img src={child.image}></img>
                                             </div>
@@ -37,7 +39,7 @@ const HolidayComponent = ({ details }) => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+
 
                                     </div>
                                 )

@@ -4,9 +4,13 @@ import Maps from '../images/sidearea-img.jpeg'
 import { Link } from 'react-router-dom'
 import { BiBasket } from 'react-icons/bi'
 import { FiSearch } from 'react-icons/fi'
+import { FaRegEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaTwitter, FaPinterest, FaFacebook, FaInstagram, FaRegUserCircle } from 'react-icons/fa'
 
 const MainNavBar = () => {
     const show = useRef(null)
+    const showSideBar=() =>{
+        
+    }
     return (
         <>
             <section id='main-nav'>
@@ -20,7 +24,18 @@ const MainNavBar = () => {
                         <div className='navigation-items'>
                             <ul>
                                 <li>
-                                    <Link to='/' className=''>Home</Link>
+                                    <Link to='/'>Home</Link>
+                                    {/* <div className='sub-nav' ref={show}>
+                                        <ul>
+                                            <li>Home</li>
+                                            <li>About</li>
+                                            <li>Blog</li>
+                                            <li>Home</li>
+                                            <li>Home</li>
+                                            <li>Home</li>
+                                        </ul>
+
+                                    </div> */}
                                 </li>
                                 <li>
                                     <Link to='/'>Pages</Link>
@@ -64,6 +79,29 @@ const MainNavBar = () => {
                                         </div>
                                         <div className='sidenav-maps'>
                                             <img src={Maps}></img>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipis cing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis theme natoque</p>
+                                        </div>
+                                        <div className='search-bar'>
+                                            <div className='section-title'>
+                                                <h5>Find your Destination</h5>
+                                                <div className='search-fields'>
+                                                    <input></input>
+                                                    <button className='common-button'>
+                                                        <FiSearch />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='social-icons'>
+                                            <div className='section-title'>
+                                                <h5>Follow Me</h5>
+                                                <div className='icons-items'>
+                                                    <FaTwitter className='icon-style' />
+                                                    <FaPinterest className='icon-style' />
+                                                    <FaFacebook className='icon-style' />
+                                                    <FaInstagram className='icon-style' />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 

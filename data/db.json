@@ -1,0 +1,25 @@
+{
+    "places" :[
+        { "title": "images/Valencia.jpeg", "name": "Valencia", "price": "$1966" },
+        { "title": "images/Seminyak.jpeg", "name": "Varadoro", "price": "$2300" },
+        { "title": "images/rome.jpeg", "name": "Italy", "price": "$2500" }
+    ],
+    "detail":[
+        {
+            "title": "images/Spain.jpeg", "name": "Spain", "childImages": [
+                { "image": "images/Tarragona.jpeg", "subname": "Tarragona", "rating": "5.0 Good", "price": "$1740" }, { "image": "images/Madrid.jpeg", "subname": "Madrid", "rating": "7.0 Superb", "price": "$1100" }, { "image": "images/Barcelona.jpeg", "subname": "Barcelona", "rating": "5.3 Good", "price": "$840" }
+            ]
+        },
+        {
+            "title": "images/Taiwan.jpeg", "name": "Taiwan", "childImages": [
+                { "image": "images/Tainan.jpeg", "subname": "Tainan", "rating": "7.3 Superb", "price": "$999" }, { "image": "images/Taipei.jpeg", "subname": "Taipei", "rating": "5.0 Good", "price": "$2130" }, { "image": "images/Khaiosung.jpeg", "subname": "Kaohsiung", "rating": "8.0 Superb", "price": "$963" }
+            ]
+        },
+        {
+            "title": "images/Bali.jpeg", "name": "Bali", "childImages": [
+                { "image": "images/Ubud.jpeg", "subname": "Ubud", "rating": "6.0 Good", "price": "$888" }, { "image": "images/Seminyak.jpeg", "subname": "images/Valencia.jpeg", "rating": "9.0 Superb", "price": "$966" }, { "image": "images/Denpasar.jpeg", "subname": "Denpasar", "rating": "6.7 Good", "price": "$999" }
+            ]
+        }
+    ]
+}
+

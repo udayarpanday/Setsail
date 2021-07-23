@@ -8,6 +8,7 @@ import Home from './pages/home/Home'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import About from './pages/About'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path='/'><Home/></Route>
+        <Route exact path='/about'><About/></Route>
       </Switch>
     </Router>
     </>

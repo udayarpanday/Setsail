@@ -2,7 +2,6 @@ import React from 'react'
 import Slider from "react-slick";
 import Slider1 from "../../images/h1-parallax-img-2.jpeg"
 const TravelReviews = ({ reviews }) => {
-    console.log(reviews)
     const settings = {
         arrows: false,
         dots:true,
@@ -13,7 +12,7 @@ const TravelReviews = ({ reviews }) => {
     };
     return (
         <>
-            <section id='reviews-slider'>
+            <section className='reviews-slider'>
                 <div className='parallax' style={{ backgroundImage: `url(${Slider1})` }}>
                     <div className='custom-container'>
                         <div className='section-title'>

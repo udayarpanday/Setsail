@@ -37,6 +37,7 @@ const TopNavBar = () => {
                                     </Dropdown.Menu>
                                 </Dropdown> */}
                                 <div className='top-nav-buttons'>
+                                    <button className='common-button'>English</button>
                                     <FaRegUserCircle className='login-button'  />
                                 </div>
                             </ul>

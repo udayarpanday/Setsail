@@ -8,7 +8,7 @@ import Icon4 from '../../images/icon-4.png'
 const VideoComponent = () => {
     return (
         <>
-                 <section id='video-wrapper'>
+                 <section className='video-wrapper'>
                 <div className='parallax'>
                     <div className='custom-container'>
                         <div className='section-title'>
