@@ -76,7 +76,7 @@ const MainNavBar = () => {
                                     </div>
                                     <div className='sidenav-container'>
                                         <div className='logo'>
-                                        <img src='images/logo.png'></img>
+                                        <img src='images/logo.png'></img> 
                                             <h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aene an commodo ligula eget dolor. Aenean massa. Cum sociis the</h3>
                                         </div>
                                         <div className='sidenav-maps'>
